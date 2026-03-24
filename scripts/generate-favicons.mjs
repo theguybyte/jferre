@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, '..');
-const src = resolve(root, 'public/original/golden_favicon.png');
+const src = resolve(root, 'public/original/jferre_favicon.png');
 const outDir = resolve(root, 'public/favicons');
 
 mkdirSync(outDir, { recursive: true });
@@ -44,14 +44,14 @@ writeFileSync(resolve(outDir, 'favicon.ico'), icoBuffer);
 console.log('  ✓ favicon.ico (16, 32, 48)');
 
 const manifest = {
-  name: 'Golden Prop',
-  short_name: 'Golden Prop',
+  name: 'J. Ferré Joyería',
+  short_name: 'J. Ferré',
   icons: [
     { src: '/favicons/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
     { src: '/favicons/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
   ],
-  theme_color: '#006039',
-  background_color: '#ffffff',
+  theme_color: '#D4AF37',
+  background_color: '#F7F3EF',
   display: 'standalone',
 };
 writeFileSync(resolve(outDir, 'site.webmanifest'), JSON.stringify(manifest, null, 2));
@@ -67,7 +67,7 @@ console.log(`
 <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
 <link rel="manifest" href="/favicons/site.webmanifest" />
 <meta name="msapplication-TileImage" content="/favicons/mstile-150x150.png" />
-<meta name="msapplication-TileColor" content="#006039" />
-<meta name="theme-color" content="#006039" />
+<meta name="msapplication-TileColor" content="#D4AF37" />
+<meta name="theme-color" content="#D4AF37" />
 ---------------------------------
 `);
