@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* J. Ferré Premium Color System - Inspired by Mejuri & Monica Vinader */
+    --background: 30 23% 95%; /* #F7F3EF warm ivory */
+    --foreground: 0 0% 10%; /* #1A1A1A near black */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 45 65% 52%; /* #D4AF37 soft gold */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 15% 92%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 30 10% 88%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 45 65% 52%; /* #D4AF37 soft gold */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 0% / 0.08;
+    --input: 30 15% 92%;
+    --ring: 45 65% 52%;
+    --radius: 0.25rem;
+    
+    /* Custom properties - J. Ferré Premium Brand */
+    --ivory: #F7F3EF;
+    --ivory-dark: #EDE8E3;
+    --soft-gold: #D4AF37;
+    --gold-hover: #C4A030;
+    --near-black: #1A1A1A;
+    --charcoal: #2D2D2D;
+    --warm-gray: #6B6B6B;
+    --light-gray: #E8E4E0;
+    --pure-white: #FFFFFF;
+    
+    /* Animation Easings */
+    --ease-royal: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-silk: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --ease-snap: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#F7F3EF] text-[#1A1A1A] antialiased;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .font-sans {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+}
+
+@layer components {
+  /* Gold accent */
+  .text-gold {
+    color: var(--soft-gold);
+  }
+  
+  .bg-gold {
+    background-color: var(--soft-gold);
+  }
+  
+  .border-gold {
+    border-color: var(--soft-gold);
+  }
+  
+  /* Premium Button Styles */
+  .btn-primary {
+    @apply px-10 py-4 border border-[#1A1A1A] text-[#1A1A1A] bg-transparent transition-all duration-300;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-[#1A1A1A] text-white;
+  }
+  
+  .btn-gold {
+    @apply px-10 py-4 bg-[#D4AF37] text-white transition-all duration-300;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  
+  .btn-gold:hover {
+    background-color: var(--gold-hover);
+  }
+  
+  .btn-outline-gold {
+    @apply px-10 py-4 border border-[#D4AF37] text-[#D4AF37] bg-transparent transition-all duration-300;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  
+  .btn-outline-gold:hover {
+    @apply bg-[#D4AF37] text-white;
+  }
+  
+  /* Section subtitle */
+  .section-subtitle {
+    @apply text-[10px] font-medium tracking-[3px] uppercase;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--soft-gold);
+  }
+  
+  /* Product Card Styles */
+  .product-card {
+    @apply bg-white transition-all duration-500;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+  }
+  
+  .product-card:hover {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+  
+  /* Trust Badge */
+  .trust-badge {
+    @apply flex items-center gap-3 text-[#2D2D2D];
+  }
+  
+  /* Italic serif accent */
+  .italic-accent {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+  
+  /* Navigation link */
+  .nav-link {
+    @apply text-[11px] font-medium tracking-[2px] uppercase text-[#1A1A1A] hover:text-[#D4AF37] transition-colors duration-300;
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Subtle gold glow */
+  .gold-glow {
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  }
+  
+  /* Smooth image hover */
+  .img-hover-zoom {
+    @apply overflow-hidden;
+  }
+  
+  .img-hover-zoom img {
+    @apply transition-transform duration-700;
+    transition-timing-function: var(--ease-silk);
+  }
+  
+  .img-hover-zoom:hover img {
+    @apply scale-105;
+  }
+  
+  /* Line clamp */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F7F3EF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C4A030;
+}
